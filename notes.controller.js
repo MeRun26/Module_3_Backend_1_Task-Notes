@@ -24,9 +24,7 @@ async function getNotes() {
 
 async function printNotes() {
   const notes = await getNotes();
-  notes.forEach((note) => {
-    console.log(`${chalk.blue(note.id)} ${note.title}`);
-  });
+  return notes.map((note) => `${chalk.blue(note.id)} ${note.title}`).join('\n');
 }
 
 async function removeNote(id) {
